@@ -1,0 +1,31 @@
+apply plugin: "java"
+
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories{
+    mavenCentral()
+    maven{ url 'https://www.jitpack.io' }
+	jcenter()
+}
+
+ext{
+    //the build number that this plugin is made for
+    mindustryVersion = 'v102'
+}
+
+dependencies{
+    compileOnly "com.github.Anuken.Arc:arc-core:$mindustryVersion"
+    compileOnly "com.github.Anuken.Mindustry:core:$mindustryVersion"
+	compile ('net.dv8tion:JDA:4.1.0_95') {
+	exclude module: 'opus-java'
+	}
+}
+
+jar{
+    version = null
+    from{
+        configurations.runtimeClasspath.collect{it.isDirectory() ? it : zipTree(it)}
+    }
+}

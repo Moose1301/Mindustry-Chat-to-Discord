@@ -1,0 +1,7 @@
+{
+  "name": "Chat to Discord",
+  "author": "Moose1301",
+  "main": "me.moose.Chat.Main",
+  "description": "A plugin to for the chat to discord and back"
+  "version": 1.0
+}
