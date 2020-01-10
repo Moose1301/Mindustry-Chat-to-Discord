@@ -18,4 +18,4 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     - name: Get the Jar.
-      run: ./gradlew run
+      run: ./gradlew jar
